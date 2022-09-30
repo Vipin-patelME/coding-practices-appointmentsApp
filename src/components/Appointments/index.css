@@ -20,7 +20,7 @@
   justify-content: space-around;
   align-items: center;
 }
-.appoinment_image {
+.appointment-image {
   height: 250px;
   width: 300px;
 }
@@ -31,4 +31,13 @@
   border-radius: 5px;
   color: #ffffff;
   background-color: #8b5cf6;
+}
+.appointment-button-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.appointment-list-cont {
+  display: flex;
+  flex-wrap: wrap;
 }

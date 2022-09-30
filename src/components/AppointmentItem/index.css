@@ -1,1 +1,7 @@
 /* Write your CSS here */
+.appointment-list {
+  height: auto;
+  width: 20%;
+  border-radius: 10px;
+  border-style: 10px solid blue;
+}

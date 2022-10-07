@@ -20,6 +20,9 @@
   justify-content: space-around;
   align-items: center;
 }
+.appointment-cont {
+  list-style: none;
+}
 .appointment-image {
   height: 250px;
   width: 300px;
@@ -40,4 +43,9 @@
 .appointment-list-cont {
   display: flex;
   flex-wrap: wrap;
+}
+.appointment-list {
+  display: flex;
+  margin-right: 15px;
+  justify-content: space-between;
 }

@@ -8,6 +8,17 @@ import AppointmentItem from '../AppointmentItem'
 class Appointments extends Component {
   state = {Title: '', date: '', appointmentsList: []}
 
+  makeFavChanges = id => {
+    this.setState(prevState => ({
+      appointmentsList: prevState.appointmentsList.map(eachItem => {
+        if (eachItem.id === id) {
+          return {...eachItem, isFav: !eachItem.isFav}
+        }
+        return eachItem
+      }),
+    }))
+  }
+
   onDateChange = event => {
     this.setState({date: event.target.value})
   }
@@ -23,6 +34,7 @@ class Appointments extends Component {
       id: v4(),
       Title,
       date,
+      isFav: false,
     }
     this.setState(prevState => ({
       appointmentsList: [...prevState.appointmentsList, newAppointment],
@@ -67,7 +79,7 @@ class Appointments extends Component {
               />
             </div>
           </div>
-          <ul>
+          <ul className="appointment-cont">
             <div className="appointment-button-cont">
               <h1>Appointments</h1>
               <button type="button">Starred</button>
@@ -77,6 +89,7 @@ class Appointments extends Component {
                 <AppointmentItem
                   eachAppointment={eachAppointment}
                   key={eachAppointment.id}
+                  isFavToggle={this.makeFavChanges}
                 />
               ))}
             </div>
